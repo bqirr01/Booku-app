@@ -70,7 +70,7 @@
     <label class="text-lg font-yeseva font-bold">
         Komentar Anda
     </label>
-    <textarea class="w-full h-40 py-3 px-3 min-h-[160px] rounded-lg border-[2px] border-[#25130B] leading-tight focus:outline-none text-sm" placeholder="Ketik komentar anda..."></textarea>
+    <textarea class="w-full h-40 py-3 px-3 min-h-[160px] rounded-lg border-[2px] border-[#25130B] leading-tight focus:outline-none text-sm bg-[#F9F3EE]" placeholder="Ketik komentar anda..."></textarea>
     <button id="btn-comment" name="btn-comment" typle="submit" class="h-10 w-1/4 border-[2px] border-[#25130B] rounded-full hover:bg-[#25130B] hover:text-[#F9F3EE] self-end">
         Posting
     </button>
