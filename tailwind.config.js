@@ -7,9 +7,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      sans: ['Open Sans', 'sans-serif'],
-      display: ['Yeseva One', 'sans-serif'],
-    },
+      'nganu': ['OpenSans-Light','OpenSans-Regular', 'OpenSans-Medium', 'OpenSans-SemiBold', 'OpenSans-Bold'],
+      'yeseva': ['YesevaOne-Regular'],
+    }, 
     extend: {},
   },
   plugins: [],

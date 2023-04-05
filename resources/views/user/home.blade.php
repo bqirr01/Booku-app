@@ -1,16 +1,9 @@
 @extends('layout.app')
 
-
-
-    {{-- <div >
-        <div></div>
-        
-    </div> --}}
-
-    <div class="flex flex-row items-center justify-between max-sm:justify-center py-12 px-[272px] max-lg:px-10">
+    <div class="flex flex-row items-start justify-between max-sm:justify-center py-12 px-[272px] max-lg:px-10">
 
     
-        <a class="group" href="#">
+        <a class="group max-sm:hidden" href="#">
             <svg  width="47" height="44" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect class="group-hover:fill-[#25130B] fill-[#EB4335]" width="47" height="43.739" rx="21.8695" />
                 <path class=" fill-[#F9F3EE]" d="M21 13.1194V15.6194H31V28.1194H21V30.6194H33.5V13.1194H21ZM18.5 18.1194L13.5 21.8694L18.5 25.6194V23.1194H28.5V20.6194H18.5V18.1194Z"/>
@@ -37,14 +30,13 @@
 
     </div>
 
-    <div class="flex flex-wrap gap-[80px] pt-12 justify-between px-[272px] max-lg:px-3 max-lg:justify-center">
-        @include('book-card')
-        @include('book-card')
-        @include('book-card')
-        @include('book-card')
+    <div class="flex flex-wrap gap-[100px] pt-12 max-sm:pt-0 justify-between px-[272px] max-lg:px-3 max-lg:justify-center">
+        @include('components.book-card', ['cover' => '/images/cover2.png', 'bookname'=> 'Sebuah seni untuk bersikap bodo amat'])
+        @include('components.book-card', ['cover' => '/images/cover.png', 'bookname'=> 'Filosofi Teras'])
+        @include('components.book-card', ['cover' => '/images/cover2.png', 'bookname'=> 'Sebuah seni untuk bersikap bodo amat'])
+        @include('components.book-card', ['cover' => '/images/cover2.png', 'bookname'=> 'Sebuah seni untuk bersikap bodo amat'])
+        @include('components.book-card', ['cover' => '/images/cover.png', 'bookname'=> 'Filosofi teras'])
     </div>
-
-  
 
 
 

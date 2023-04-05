@@ -35,7 +35,7 @@
 
                     <div class="flex flex-row items-center justify-between">
                         <p class="text-sm sm:text-[15px] font-light text-[#25130B] dark:text-[#25130B]">
-                            Don’t have an account? <a href  ="#" class="font-bold text-[#25130B] hover:underline dark:text-[#25130B]">Register</a>
+                            Don’t have an account? <a href="/register" class="font-bold text-[#25130B] hover:underline dark:text-[#25130B]">Register</a>
                         </p>
 
                         <button type="submit" class="w-2/5 text-black hover:text-[#F9F3EE] bg-transparent hover:bg-[#25130B] border-[1px] border-[#25130B] rounded-full hover:bg-primary-700 font-medium text-sm px-5 py-2.5 text-center">Sign In</button>
