@@ -12,13 +12,37 @@ Route::get('/books', function () {
 });
 
 Route::get('/register', function () {
-    return view('auth.register');
+    return view('user.auth.register');
 });
 
 Route::get('/login', function () {
-    return view('auth.login');
+    return view('user.auth.login');
 });
 
 Route::get('/detail', function () {
     return view('user.detail-book');
+});
+
+Route::get('/admin', function () {
+    return redirect('/admin/login');
+});
+
+Route::get('admin/login', function () {
+    return view('admin.auth.login');
+});
+
+Route::get('admin/perpustakaan', function () {
+    return view('admin.perpustakaan');
+});
+
+Route::get('admin/setting', function () {
+    return view('admin.admin-setting');
+});
+
+Route::get('admin/perpustakaan/tambah', function () {
+    return view('admin.add-edit-book');
+});
+
+Route::get('admin/perpustakaan/edixt', function () {
+    return view('admin.add-edit-book');
 });

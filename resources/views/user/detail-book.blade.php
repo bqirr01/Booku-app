@@ -59,10 +59,10 @@
 </div>
 
 <div class="flex flex-col gap-[30px] items-start px-[32rem] max-2xl:px-[19rem] max-xl:px-[12rem] max-lg:px-[20]">
-    @include('components.comment-card', ['username'=>'Baqir Syafi', 'comment'=>'Aku anak indoensia sehat dan kuat karena mama memberi sakatonik abc'])
-    @include('components.comment-card', ['username'=>'Sungkoenoe', 'comment'=>'akuasauhasdhakj akjd kjadkja sdkjhsa lkjdasjk hdlksajhdlkjadkja dkjsh dkajsd kjasdkj hsalkjdas daskhdksaj dakjsd afkajdsf gksg ksahdgfkhdsag  gfkgdsafkdsaf '])
-    @include('components.comment-card', ['username'=>'Simon Subroto', 'comment'=>'Aku anak indoensia sehat dan kuat karena mama memberi sakatonik abc'])
-    @include('components.comment-card', ['username'=>'Celline', 'comment'=>'Aku anak afdsasadasdfa dsa sa fsadasd  sehat dan kuat karena mama memberi sakatonik abc'])
+    @include('user.components.comment-card', ['username'=>'Baqir Syafi', 'comment'=>'Aku anak indoensia sehat dan kuat karena mama memberi sakatonik abc'])
+    @include('user.components.comment-card', ['username'=>'Sungkoenoe', 'comment'=>'akuasauhasdhakj akjd kjadkja sdkjhsa lkjdasjk hdlksajhdlkjadkja dkjsh dkajsd kjasdkj hsalkjdas daskhdksaj dakjsd afkajdsf gksg ksahdgfkhdsag  gfkgdsafkdsaf '])
+    @include('user.components.comment-card', ['username'=>'Simon Subroto', 'comment'=>'Aku anak indoensia sehat dan kuat karena mama memberi sakatonik abc'])
+    @include('user.components.comment-card', ['username'=>'Celline', 'comment'=>'Aku anak afdsasadasdfa dsa sa fsadasd  sehat dan kuat karena mama memberi sakatonik abc'])
 </div>
 
 {{-- Input komentar --}}
