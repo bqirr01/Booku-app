@@ -1,6 +1,6 @@
 @extends('layout.app')
 
-    <div class="flex flex-row items-center justify-between max-sm:justify-center py-12 px-[272px] max-lg:px-10">
+    <div class="flex flex-row items-center justify-between max-sm:justify py-12 px-[272px] max-lg:px-10">
 
     
         @auth('user')

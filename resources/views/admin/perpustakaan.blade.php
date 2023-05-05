@@ -40,7 +40,7 @@
     </nav>
 
     @auth('admin')
-        <a href="{{ route('signout') }}"
+        <a href="{{ route('adminSignout') }}"
             class="flex flex-row items-center gap-2 my-14 py-3 px-10 max-md:px-3 bg-[#EB4335] hover:bg-[#25130B] rounded-full">
             <span>
                 <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">

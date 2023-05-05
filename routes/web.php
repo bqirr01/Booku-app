@@ -66,6 +66,6 @@ Route::namespace("App\Http\Controllers")->group(function () {
  
     Route::get('/admin/perpustakaan', 'AdminController@perpustakaan')->name('perpustakaan')->middleware('auth:admin');
 
-    Route::get('/signout', 'AdminController@signOut')->name('signout');
+    Route::get('/admin/signout', 'AdminController@signOut')->name('adminSignout');
 
 });
