@@ -10,7 +10,7 @@ class Authenticate extends Middleware
 {
     
     private $redirect = [
-        'admin' => 'login',
+        'admin' => 'adminLogin',
         'user' => 'login'
     ];
 

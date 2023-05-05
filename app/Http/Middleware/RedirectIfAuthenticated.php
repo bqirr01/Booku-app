@@ -11,7 +11,7 @@ class RedirectIfAuthenticated
 {
 
     private $redirect = [
-        'admin' => 'login',
+        'admin' => 'perpustakaan',
         'user' => 'home'
     ];
 

@@ -1,16 +1,16 @@
 @extends('layout.app')
 
-    <div class="flex flex-row items-center justify-center py-12 px-[272px] max-lg:px-10">
+    <div class="flex flex-row items-center justify-between max-sm:justify-center py-12 px-[272px] max-lg:px-10">
 
     
-        @guest
+        @auth('user')
         <a class="group max-sm:hidden" href="{{ route('signout') }}">
             <svg  width="47" height="44" viewBox="0 0 47 44" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <rect class="group-hover:fill-[#25130B] fill-[#EB4335]" width="47" height="43.739" rx="21.8695" />
                 <path class=" fill-[#F9F3EE]" d="M21 13.1194V15.6194H31V28.1194H21V30.6194H33.5V13.1194H21ZM18.5 18.1194L13.5 21.8694L18.5 25.6194V23.1194H28.5V20.6194H18.5V18.1194Z"/>
             </svg>
         </a> 
-        @endguest
+        @endauth
            
         <div class="flex flex-col gap-[40px] max-lg:gap-5">
             <div class="flex items-center justify-center">

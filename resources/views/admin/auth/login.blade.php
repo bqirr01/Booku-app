@@ -10,7 +10,7 @@
             <div class="p-6 space-y-4 md:space-y-6 sm:p-8">
                 <img src="/images/logo.png" alt="Logo Booku" class="mx-[60px] max-lg:mx-0">
                 
-                <form class="flex flex-col gap-[15px]" method="POST" action="{{ route('login.post') }}">
+                <form class="flex flex-col gap-[15px]" method="POST" action="{{ route('adminLogin.post') }}">
 
                     @csrf
 
