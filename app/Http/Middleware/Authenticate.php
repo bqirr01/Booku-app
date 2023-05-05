@@ -10,8 +10,8 @@ class Authenticate extends Middleware
 {
     
     private $redirect = [
-        'admin' => 'admin.login',
-        'user' => 'user.login'
+        'admin' => 'login',
+        'user' => 'login'
     ];
 
     protected function unauthenticated($request, array $guards )

@@ -11,8 +11,8 @@ class RedirectIfAuthenticated
 {
 
     private $redirect = [
-        'admin' => 'admin.login',
-        'user' => 'user.login'
+        'admin' => 'login',
+        'user' => 'home'
     ];
 
     public function handle(Request $request, Closure $next, string ...$guards): Response
