@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Books;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -63,8 +64,9 @@ class AdminController extends Controller
     
     public function perpustakaan()
     {
+        $books = Books::all();
         if(auth('admin')->check()){
-            return view('admin.perpustakaan');
+            return view('admin.perpustakaan', compact('books'));
         }
   
         return redirect("/admin/login")->withSuccess('You are not allowed to access');

@@ -40,10 +40,6 @@ Route::get('admin/setting', function () {
     return view('admin.admin-setting');
 });
 
-// Route::get('admin/perpustakaan/edit', function () {
-//     return view('admin.add-edit-book');
-// }); 
-
 Route::namespace("App\Http\Controllers")->group(function () {
 
     //user
@@ -66,7 +62,7 @@ Route::namespace("App\Http\Controllers")->group(function () {
     Route::get('/admin/signout', 'AdminController@signOut')->name('adminSignout');
 
     //add book
-    Route::match(['get', 'post'],'/add',[ BookController::class, "add" ])->name('add_book');
+    Route::match(['get', 'post'],'admin/perpustakaan/add',[ BookController::class, "add" ])->name('add_book');
 
 
 

@@ -95,37 +95,11 @@
 
 
     <div class="flex flex-wrap gap-[100px] pt-12 justify-between px-[272px] max-lg:px-3 max-lg:justify-center">
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover.png',
-            'bookname' => 'Filosofi Teras',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover2.png',
-            'bookname' => 'Filosofi Teras',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover3.jpg',
-            'bookname' => 'Unidentified',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover4.jpg',
-            'bookname' => 'Unidentified',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover5.jpg',
-            'bookname' => 'Unidentified',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover6.jpg',
-            'bookname' => 'Unidentified',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover7.jpg',
-            'bookname' => 'Unidentified',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover8.jpg',
-            'bookname' => 'Unidentified',
-        ])
+        @foreach ($books as $book)
+            @include('admin.components.admin-book-card', [
+                'cover' => $book->cover,
+                'bookname' => $book->name,
+            ])    
+        @endforeach
     </div>
 </div>

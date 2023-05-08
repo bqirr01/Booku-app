@@ -20,21 +20,21 @@ class BookController extends Controller
             ]);
             
             $cover_name = time() . '_' . $request->file('cover')->getClientOriginalName();
-            $upload_cover = $request->cover->storeAs('public/book_cover', $cover_name);
+            $upload_cover = $request->cover->storeAs('/public/book_cover', $cover_name);
             $cover_path = Storage::url($upload_cover);
 
             $pdf_name = time() . '_' . $request->file('pdf')->getClientOriginalName();
-            $upload_pdf = $request->pdf->storeAs('public/book_pdf', $pdf_name);
+            $upload_pdf = $request->pdf->storeAs('/public/book_pdf', $pdf_name);
             $pdf_path = Storage::url($upload_pdf);
             
             Books::create([
-                'name' => $request->judul_buku,
+                'name' => $request->name,
                 'cover' => $cover_path,
                 'pdf' => $pdf_path,
                 'sinopsis' => $request->sinopsis
             ]);
 
-            return redirect('/admin/perpustakaan/add')->with('status', 'Data tersimpan di database');
+            return redirect('/admin/perpustakaan')->with('status', 'Data tersimpan di database');
  
         }
 

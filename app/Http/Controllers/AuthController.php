@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+
+use App\Models\Books;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -63,8 +65,9 @@ class AuthController extends Controller
     
     public function home()
     {
+        $bukus = Books::all();
         if(auth('user')->check()){
-            return view('user.home');
+            return view('user.home', compact('bukus'));
         }
   
         return redirect("/login")->withSuccess('You are not allowed to access');

@@ -37,53 +37,32 @@
     <div class="flex flex-col px-20 max-md:px-5 gap-2">
         <p class="font-bold font-yeseva text-3xl max-md:text-xl">Upload Cover</p>
         <label for="upload"
-            class="w-2/12 h-2/12 max-2xl:w-1/2 max-md:w-full border-2 border-[#25130B] rounded-3xl overflow-clip cursor-pointer object-cover" required="">
-            <img src="/images/addcover.png" id="uploadedImage" class="w-full h-full object-cover ">
+            class="w-1/4 h-2/3 p-5 max-2xl:w-1/2 max-md:w-full border-2 border-[#25130B] rounded-xl overflow-clip cursor-pointer object-cover" required="">
             <input type="file" id="cover" target="uploadedImage" name="cover" required="" value="{{ old('cover') }}">
         </label>
     </div>
     
     <div class="flex flex-col p-20 max-md:p-5 gap-2">
-        <p class="font-bold font-yeseva text-3xl max-md:text-xl">Upload Book .pdf</p>
-        <div class="flex flex-row p-3 gap-5 items-center border-2 w-2/12 max-2xl:w-1/2 max-md:w-full rounded-3xl border-[#25130B]">
-            <label for="pdf" class="cursor-pointer">
-                <svg width="41" height="41" viewBox="0 0 41 41" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M15.3749 29.0416V18.7916L11.9583 22.2083" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M15.375 18.7916L18.7917 22.2083" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M37.5834 17.0833V25.625C37.5834 34.1666 34.1667 37.5833 25.6251 37.5833H15.3751C6.83341 37.5833 3.41675 34.1666 3.41675 25.625V15.375C3.41675 6.83329 6.83341 3.41663 15.3751 3.41663H23.9167" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    <path d="M37.5834 17.0833H30.7501C25.6251 17.0833 23.9167 15.375 23.9167 10.25V3.41663L37.5834 17.0833Z" stroke="#292D32" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>    
-            </label>
-            <input type="file" id="pdf" name="pdf" class="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer" accept=".pdf" style="display:none;" value="{{ old('pdf') }}">
-            <p id="file_name" class="mt-2">{{ old('pdf') }}</p>
-        
-            <script>
-                document.querySelector('svg').addEventListener('click', function() {
-                    const fileInput = document.getElementById('file');
-                    fileInput.style.display = 'block';
-                    fileInput.focus();
-                });
-        
-                document.getElementById('pdf').addEventListener('change', function() {
-                    const fileInput = document.getElementById('pdf');
-                    const file = fileInput.files[0];
-                    const fileNameElement = document.getElementById('fileName');
-                    fileNameElement.innerHTML = file.name;
-                });
-            </script>
-        </div>
+        <p class="font-bold font-yeseva text-3xl max-md:text-xl">Upload Book ( .pdf )</p>
+        <label for="upload"
+            class="w-1/4 h-2/12 p-5 max-2xl:w-1/2 max-md:w-full border-2 border-[#25130B] rounded-xl overflow-clip cursor-pointer object-cover" required="">
+            <input type="file" id="pdf" target="uploadedPDF" name="pdf" required="" accept=".pdf" value="{{ old('pdf') }}">
+        </label>
     </div>
     
     
-    <div class="flex flex-col px-20 pb-20 max-md:p-5 gap-2">
+    <div class="flex flex-col px-20 max-md:p-5 gap-2">
         <label class="font-bold font-yeseva text-3xl max-md:text-xl">
             Sinopsis / Book Description
         </label>
         <textarea class="w-full h-40 py-3 px-3 min-h-[160px] rounded-3xl border-[2px] border-[#25130B] leading-tight focus:outline-none text-sm bg-[#F9F3EE]" required="" id="w3review" name="sinopsis" >{{ old('sinopsis') }}</textarea>
     </div>
 
-    <button type="submit" value="add" class="bg-[#D9AA63] text-[#F9F3EE] rounded-full py-1 px-5 font-medium hover:bg-[#25130B]" name="submit" id="btn-publish">
-        Publish
-    </button>
+
+    <div class="flex flex-col p-20 max-md:p-5 gap-2">
+        <button type="submit" value="add" class="w-1/4 max-lg:w-1/2 max-md:w-full bg-[#D9AA63] text-[#F9F3EE] rounded-full py-3 px-5 font-medium hover:bg-[#25130B] text-xl" name="submit" id="btn-publish">
+            Publish
+        </button>
+    </div>
 
 </form>
