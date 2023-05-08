@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BookController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -39,10 +40,6 @@ Route::get('admin/setting', function () {
     return view('admin.admin-setting');
 });
 
-// Route::get('admin/perpustakaan/tambah', function () {
-//     return view('admin.add-edit-book');
-// });
-
 // Route::get('admin/perpustakaan/edit', function () {
 //     return view('admin.add-edit-book');
 // }); 
@@ -60,12 +57,17 @@ Route::namespace("App\Http\Controllers")->group(function () {
 
     Route::get('/signout', 'AuthController@signOut')->name('signout');
 
-    // //admin
+    //admin
     Route::get('/admin/login', 'AdminController@login')->name('adminLogin')->middleware('guest:admin');
     Route::post('/admin/login', 'AdminController@customLogin')->name('adminLogin.post');
  
     Route::get('/admin/perpustakaan', 'AdminController@perpustakaan')->name('perpustakaan')->middleware('auth:admin');
 
     Route::get('/admin/signout', 'AdminController@signOut')->name('adminSignout');
+
+    //add book
+    Route::match(['get', 'post'],'/add',[ BookController::class, "add" ])->name('add_book');
+
+
 
 });

@@ -43,12 +43,11 @@
         </ul>
     </nav>
 
-    <form>
-        <button type="submit"
+    @auth('admin')
+        <a href="{{ route('adminSignout') }}"
             class="flex flex-row items-center gap-2 my-14 py-3 px-10 max-md:px-3 bg-[#EB4335] hover:bg-[#25130B] rounded-full">
             <span>
-                <svg width="19" height="17" viewBox="0 0 19 17" fill="none"
-                    xmlns="http://www.w3.org/2000/svg">
+                <svg width="19" height="17" viewBox="0 0 19 17" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                         d="M7.21426 0.755981V3.0417H16.3571V14.4703H7.21426V16.756H18.6428V0.755981H7.21426ZM4.92855 5.32741L0.357117 8.75598L4.92855 12.1846V9.89884H14.0714V7.61312H4.92855V5.32741Z"
                         fill="#F9F3EE" />
@@ -57,8 +56,9 @@
             <span class="text-[#F9F3EE] text-[20px] max-md:hidden">
                 Logout
             </span>
-        </button>
-    </form>
+        </a>
+    @endauth
+    
 </aside>
 
 <div class="flex flex-col justify-center items-center mt-[100px] max-md:justify-start max-md:items-start py-28 ml-96 max-sm:ml-20 max-md:ml-20 gap-12">

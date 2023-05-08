@@ -14,8 +14,8 @@ class adminSeeder extends Seeder
     public function run(): void
     {
         DB::table('admins')->insert([
-            "username" => 'admin',
-            "password" => Hash::make('admin'),
+            "username" => 'basya',
+            "password" => Hash::make('basya'),
             "created_at" => now(),
             "updated_at" => now()
         ]);

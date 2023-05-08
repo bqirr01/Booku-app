@@ -35,9 +35,12 @@
     <div class="flex flex-wrap gap-[100px] pt-12 max-sm:pt-0 justify-between px-[272px] max-lg:px-3 max-lg:justify-center">
         @include('user.components.book-card', ['cover' => '/images/cover2.png', 'bookname'=> 'Sebuah seni untuk bersikap bodo amat'])
         @include('user.components.book-card', ['cover' => '/images/cover.png', 'bookname'=> 'Filosofi Teras'])
-        @include('user.components.book-card', ['cover' => '/images/cover2.png', 'bookname'=> 'Sebuah seni untuk bersikap bodo amat'])
-        @include('user.components.book-card', ['cover' => '/images/cover2.png', 'bookname'=> 'Sebuah seni untuk bersikap bodo amat'])
-        @include('user.components.book-card', ['cover' => '/images/cover.png', 'bookname'=> 'Filosofi teras'])
+        @include('user.components.book-card', ['cover' => '/images/cover3.jpg', 'bookname'=> 'Beyond The Inspiration'])
+        @include('user.components.book-card', ['cover' => '/images/cover4.jpg', 'bookname'=> 'Unidentified'])
+        @include('user.components.book-card', ['cover' => '/images/cover5.jpg', 'bookname'=> 'Unidentified'])
+        @include('user.components.book-card', ['cover' => '/images/cover6.jpg', 'bookname'=> 'Unidentified'])
+        @include('user.components.book-card', ['cover' => '/images/cover7.jpg', 'bookname'=> 'Unidentified'])
+        @include('user.components.book-card', ['cover' => '/images/cover8.jpg', 'bookname'=> 'Unidentified'])
     </div>
 
 

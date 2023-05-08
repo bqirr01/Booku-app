@@ -81,7 +81,7 @@
 
         <a name="btn-add" id="btn-add"
             class="flex flex-row group items-center gap-2 justify-center border-2 border-[#25130B] hover:bg-[#25130B] rounded-full h-12 w-1/4"
-            href="/admin/perpustakaan/tambah">
+            href="{{ route('add_book') }}">
 
             <span class="text-sm max-sm:hidden group-hover:text-[#F9F3EE]">
                 Add Book
@@ -104,32 +104,28 @@
             'bookname' => 'Filosofi Teras',
         ])
         @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover2.png',
-            'bookname' => 'Filosofi Teras',
+            'cover' => '/images/cover3.jpg',
+            'bookname' => 'Unidentified',
         ])
         @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover2.png',
-            'bookname' => 'Filosofi Teras',
+            'cover' => '/images/cover4.jpg',
+            'bookname' => 'Unidentified',
         ])
         @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover.png',
-            'bookname' => 'Filosofi Teras',
+            'cover' => '/images/cover5.jpg',
+            'bookname' => 'Unidentified',
         ])
         @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover.png',
-            'bookname' => 'Filosofi Teras',
+            'cover' => '/images/cover6.jpg',
+            'bookname' => 'Unidentified',
         ])
         @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover.png',
-            'bookname' => 'Filosofi Teras',
+            'cover' => '/images/cover7.jpg',
+            'bookname' => 'Unidentified',
         ])
         @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover.png',
-            'bookname' => 'Filosofi Teras',
-        ])
-        @include('admin.components.admin-book-card', [
-            'cover' => '/images/cover.png',
-            'bookname' => 'Filosofi Teras',
+            'cover' => '/images/cover8.jpg',
+            'bookname' => 'Unidentified',
         ])
     </div>
 </div>
