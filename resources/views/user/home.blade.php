@@ -46,6 +46,7 @@
             @include('user.components.book-card', [
                 'cover' => $book->cover,
                 'bookname' => $book->name,
+                'id' => $book->id
             ])    
     @endforeach
 

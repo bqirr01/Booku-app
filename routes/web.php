@@ -61,15 +61,20 @@ Route::namespace("App\Http\Controllers")->group(function () {
 
     Route::get('/admin/signout', 'AdminController@signOut')->name('adminSignout');
 
-    //add book
+    //create book
     Route::match(['get', 'post'],'admin/perpustakaan/add',[ BookController::class, "add" ])->name('add_book');
 
-    //edit book
-    Route::put('/admin/perpustakaan/update/{id}', [AdminController::class, 'update'])->name('updateBook');
+    //read book
+    Route::get('/detail/{id}', 'AuthController@read')->name('showBook');
+
+    //update book
+    Route::put('/admin/perpustakaan/update/{id}', 'AdminController@update')->name('updateBook');
 
     //delete book
     Route::delete('/admin/perpustakaan/delete/{id}', 'AdminController@destroy')->name('deleteBook');
 
+
+    
 
 
 });

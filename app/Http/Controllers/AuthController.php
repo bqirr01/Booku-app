@@ -2,6 +2,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Books;
+use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
@@ -72,7 +73,12 @@ class AuthController extends Controller
   
         return redirect("/login")->withSuccess('You are not allowed to access');
     }
-    
+    public function read(string $id): View
+    {
+        $book = Books::findOrFail($id);
+        return view('user.detail-book', compact('book'));
+    }
+
     public function signOut() {
         Session::flush();
         auth('user')->logout();

@@ -9,7 +9,7 @@
     </button>
 
     <span class="text-[70px] max-md:text-xl font-bold text-center font-yeseva max-w-[760px] max-md:max-w-[200px] leading-none">
-        Sebuah Seni Untuk Bersifat Bodo Amat
+        {{ $book->name }}
     </span>
 
     <span class="group" name="btn-love" id="btn-love">
@@ -22,9 +22,9 @@
 
 <div class="flex flex-col items-center gap-10 max-md:gap-5 py-3">
     <div class="bg-white shadow-lg py-6">
-        <img class="object-contain w-[517.54px] h-[644.65px] max-md:w-[258.76px] max-md:h-[322.3px]" src="images/cover2.png" alt="nama Bukunya">
+        <img class="object-contain w-[517.54px] h-[644.65px] max-md:w-[258.76px] max-md:h-[322.3px]" src="{{ $book->cover }}" alt="{{ old('nama') }}">
     </div>
-    <a href="#" class="w-[20%] max-2xl:w-1/2 rounded-full border-2 border-[#25130B] font-bold text-center py-5 hover:bg-[#25130B] hover:text-[#F9F3EE]">
+    <a href="{{ $book->pdf }}" class="w-[20%] max-2xl:w-1/2 rounded-full border-2 border-[#25130B] font-bold text-center py-5 hover:bg-[#25130B] hover:text-[#F9F3EE]">
         Baca
     </a>
     <p class="text-xl max-md:text-sm max-w-xl max-md:max-w-xs text-center">
@@ -43,8 +43,7 @@
 
 <div class="flex justify-center">
     <p class="text-base max-md:text-xs max-w-4xl max-md:px-5 text-center">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non lacinia augue. Fusce est lacus, tincidunt quis tincidunt in, semper eget quam. Ut at neque nulla. Sed fermentum ligula sit amet dui convallis, eu sagittis felis viverra. In semper pharetra scelerisque. Sed at libero non ligula sollicitudin lobortis. Phasellus pulvinar dolor sed euismod pretium.
-        Nam dolor nisi, fermentum sed semper maximus, posuere eu mi. Aliquam lobortis justo tortor, nec suscipit metus aliquam eu. Morbi consectetur vitae justo at egestas. Praesent condimentum iaculis viverra. In et lorem sed lorem egestas iaculis nec sed ipsum. In non elit fermentum, consectetur lectus quis, auctor arcu. Proin et vestibulum tortor.
+        {{ $book->sinopsis }}
         </p>
 </div>
 
