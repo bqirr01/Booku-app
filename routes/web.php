@@ -42,18 +42,18 @@ Route::get('admin/setting', function () {
 
 Route::namespace("App\Http\Controllers")->group(function () {
 
-    //user
-    Route::get('/login', 'AuthController@login')->name('login')->middleware('guest:user');
-    Route::post('/login', 'AuthController@customLogin')->name('login.post');
+    //user auth
+    Route::get('/login', 'UserController@login')->name('login')->middleware('guest:user');
+    Route::post('/login', 'UserController@customLogin')->name('login.post');
 
-    Route::get('/register', 'AuthController@registration')->name('register');
-    Route::post('/register', 'AuthController@customRegistration')->name('register.post');
+    Route::get('/register', 'UserController@registration')->name('register');
+    Route::post('/register', 'UserController@customRegistration')->name('register.post');
 
-    Route::get('/home', 'AuthController@home')->name('home')->middleware('auth:user');
+    Route::get('/home', 'UserController@home')->name('home')->middleware('auth:user');
 
-    Route::get('/signout', 'AuthController@signOut')->name('signout');
+    Route::get('/signout', 'UserController@signOut')->name('signout');
 
-    //admin
+    //admin auth
     Route::get('/admin/login', 'AdminController@login')->name('adminLogin')->middleware('guest:admin');
     Route::post('/admin/login', 'AdminController@customLogin')->name('adminLogin.post');
  
@@ -65,10 +65,11 @@ Route::namespace("App\Http\Controllers")->group(function () {
     Route::match(['get', 'post'],'admin/perpustakaan/add',[ BookController::class, "add" ])->name('add_book');
 
     //read book
-    Route::get('/detail/{id}', 'AuthController@read')->name('showBook');
+    Route::get('/detail/{id}', 'UserController@read')->name('showBook');
 
     //update book
-    Route::put('/admin/perpustakaan/update/{id}', 'AdminController@update')->name('updateBook');
+    Route::get('/admin/perpustakaan/edit/{id}', 'BookController@edit')->name('editBook');
+    Route::put('/admin/perpustakaan/edit/{id}', 'BookController@update')->name('updateBook');
 
     //delete book
     Route::delete('/admin/perpustakaan/delete/{id}', 'AdminController@destroy')->name('deleteBook');

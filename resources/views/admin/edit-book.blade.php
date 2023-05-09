@@ -9,7 +9,7 @@
     </button>
 
     <span class="text-[70px] max-md:text-xl font-bold text-center font-yeseva max-w-[760px] max-md:max-w-[200px] leading-none">
-        {{ old('name') }}
+        {{ $book->name }}
     </span>
 
     <span type="submit" value="add" class="bg-transparent text-transparent rounded-full py-1 px-5 font-medium" name="submit" id="btn-publish">
@@ -33,14 +33,14 @@
         <p class="font-bold font-yeseva text-3xl max-md:text-xl">
         Title
         </p>
-        <input class="h-20 px-5 rounded-3xl bg-[#F9F3EE] border-2 border-[#25130B]" type="text" name="name" value="{{ old('name') }}" required="">
+        <input class="h-20 px-5 rounded-3xl bg-[#F9F3EE] border-2 border-[#25130B]" type="text" name="name" value="{{ $book->name }}" required="">
     </div>
     
     <div class="flex flex-col px-20 max-md:px-5 gap-2">
         <p class="font-bold font-yeseva text-3xl max-md:text-xl">Upload Cover</p>
         <label for="upload"
             class="w-1/4 h-2/3 p-5 max-2xl:w-1/2 max-md:w-full border-2 border-[#25130B] rounded-xl overflow-clip cursor-pointer object-cover" required="">
-            <input type="file" id="cover" target="uploadedImage" name="cover" required="" value="{{ old('cover') }}">
+            <input type="file" id="cover" target="uploadedImage" name="cover" required="" value="{{ $book->cover }}">
         </label>
     </div>
     
@@ -48,7 +48,7 @@
         <p class="font-bold font-yeseva text-3xl max-md:text-xl">Upload Book ( .pdf )</p>
         <label for="upload"
             class="w-1/4 h-2/12 p-5 max-2xl:w-1/2 max-md:w-full border-2 border-[#25130B] rounded-xl overflow-clip cursor-pointer object-cover" required="">
-            <input type="file" id="pdf" target="uploadedPDF" name="pdf" required="" accept=".pdf" value="{{ old('pdf') }}">
+            <input type="file" id="pdf" target="uploadedPDF" name="pdf" required="" accept=".pdf" value="{{ $book->pdf }}">
         </label>
     </div>
     
@@ -57,7 +57,7 @@
         <label class="font-bold font-yeseva text-3xl max-md:text-xl">
             Sinopsis / Book Description
         </label>
-        <textarea class="w-full h-40 py-3 px-3 min-h-[160px] rounded-3xl border-[2px] border-[#25130B] leading-tight focus:outline-none text-sm bg-[#F9F3EE]" required="" id="w3review" name="sinopsis" >{{ old('sinopsis') }}</textarea>
+        <textarea class="w-full h-40 py-3 px-3 min-h-[160px] rounded-3xl border-[2px] border-[#25130B] leading-tight focus:outline-none text-sm bg-[#F9F3EE]" required="" id="w3review" name="sinopsis" >{{ $book->sinopsis }}</textarea>
     </div>
 
 

@@ -74,31 +74,6 @@ class AdminController extends Controller
         return redirect("/admin/login")->withSuccess('You are not allowed to access');
     }
 
-    public function edit(string $id): View
-    {
-        $book = Books::findOrFail($id);
-        return view('admin.add-book', compact('book'));
-    }
-
-    public function update(Request $request, $id)
-    {
-        $validated = $request->validate([
-            'name' => 'required|string|max:200|min:3',
-            'cover' => 'required|image|mimes:jpg,png,jpeg,gif,svg|max:2000',
-            'pdf' => 'required|mimes:pdf,xlx,csv',
-            'sinopsis' => 'required|min:5'
-        ]);
-
-        $book = Books::findOrFail($id);
-
-        $book->update([
-                'name'     => $request->name,
-                'sinopsis' => $request->sinopsis
-            ]);
-
-        return redirect('/admin/perpustakaan')->withSuccess('Book has been updated successfully!');
-    }
-
     public function destroy($id): RedirectResponse
     {
         $book = Books::findOrFail($id);

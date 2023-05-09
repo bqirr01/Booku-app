@@ -3,7 +3,7 @@
         <img class="object-contain w-[258.76px] h-[322.3px]" src="{{ $cover }}" alt="{{ $bookname }}">
     </div>
     <div class="flex flex-row justify-between bg-[#D9AA63]">
-        <a href="" id="btn-edit" class="py-3 px-[50px] bg-[#D9AA63] hover:bg-[#B89867]">
+        <a href="{{ route("updateBook", ["id" => $id]) }}" method="POST" id="edit" class="py-3 px-[50px] bg-[#D9AA63] hover:bg-[#B89867]">
             <svg width="31" height="30" viewBox="0 0 31 30" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                     d="M27.2731 10.1507L20.2868 3.24658L22.5882 0.945206C23.2183 0.315069 23.9926 0 24.9109 0C25.8293 0 26.603 0.315069 27.232 0.945206L29.5334 3.24658C30.1635 3.87671 30.4923 4.63726 30.5197 5.52822C30.5471 6.41918 30.2457 7.17918 29.6156 7.80822L27.2731 10.1507ZM24.8896 12.5753L7.46491 30H0.478607V23.0137L17.9033 5.58904L24.8896 12.5753Z"
