@@ -99,6 +99,7 @@
             @include('admin.components.admin-book-card', [
                 'cover' => $book->cover,
                 'bookname' => $book->name,
+                'id' => $book->id
             ])    
         @endforeach
     </div>

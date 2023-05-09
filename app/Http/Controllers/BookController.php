@@ -38,6 +38,6 @@ class BookController extends Controller
  
         }
 
-        return view('admin.add-edit-book');
+        return view('admin.add-book');
     }
 }

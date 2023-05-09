@@ -64,6 +64,12 @@ Route::namespace("App\Http\Controllers")->group(function () {
     //add book
     Route::match(['get', 'post'],'admin/perpustakaan/add',[ BookController::class, "add" ])->name('add_book');
 
+    //edit book
+    Route::put('/admin/perpustakaan/update/{id}', [AdminController::class, 'update'])->name('updateBook');
+
+    //delete book
+    Route::delete('/admin/perpustakaan/delete/{id}', 'AdminController@destroy')->name('deleteBook');
+
 
 
 });
