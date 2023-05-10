@@ -42,15 +42,22 @@ class UserController extends Controller
       
     public function customRegistration(Request $request)
     {  
-        $request->validate([
-            'username' => 'required',
-            'email' => 'required|email|unique:users',
-            'password' => 'min:6|required_with:password_confirm|same:password_confirm',
-            'password_confirm' => 'min:6'
+        error_log("Validating registration");
+        $data = $request->validate([
+            'username' => 'required|unique:users,username',
+            'email' => 'required|email|unique:users,email',
+            'password' => 'min:6|confirmed',
         ]);
+
+        error_log("Successfully validating");
+
+        error_log($data['username']);
            
-        $data = $request->all();
-        $check = $this->create($data);
+        $user = $this->create($data);
+        $user->save();
+        error_log("Successfully created user ". $user->username);
+
+        auth('user')->attempt($data);
          
         return redirect("/home");
     }
@@ -66,8 +73,8 @@ class UserController extends Controller
     
     public function home()
     {
-        $bukus = Books::all();
         if(auth('user')->check()){
+            $bukus = Books::all();
             return view('user.home', compact('bukus'));
         }
   
