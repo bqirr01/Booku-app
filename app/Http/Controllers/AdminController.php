@@ -46,7 +46,7 @@ class AdminController extends Controller
         $validatedData = $request->validate([
             'username' => 'required',
             'password' => 'required',
-            'new_password' => 'min:6|confirmed',
+            'new_password' => 'min:3|confirmed',
         ]);
 
         $adminId = auth('admin')->user()->id;
@@ -67,7 +67,7 @@ class AdminController extends Controller
         $admin->password = Hash::make($validatedData["new_password"]);
         $admin->save();
 
-        return back()->with('success', 'Your credentials have been changed.');
+        return back()->with('success', 'Admin Changed');
     }
 
 
@@ -106,7 +106,7 @@ class AdminController extends Controller
         $book = Books::findOrFail($id);
         $book->delete();
 
-        return redirect('/admin/perpustakaan')->withSuccess('Book has been deleted successfully!');
+        return redirect('/admin/perpustakaan')->with('success', 'Book Deleted');
     }
 
     public function signOut()
