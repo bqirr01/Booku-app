@@ -1,4 +1,5 @@
 <?php
+
 namespace App\Http\Controllers;
 
 use App\Models\Books;
@@ -7,13 +8,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+
 class UserController extends Controller
 {
     public function login()
     {
         return view('user.auth.login');
-    }  
-      
+    }
+
     public function customLogin(Request $request)
     {
         $validated = $request->validate([
@@ -21,17 +23,17 @@ class UserController extends Controller
             'email' => 'required',
             'password' => 'required',
         ]);
-   
+
         $credentials = $validated;
         error_log("Lagi login...");
         if (auth("user")->attempt($credentials)) {
             error_log("Udah bisa login");
             return redirect()->intended('home')
-                        ->withSuccess('Signed in');
+                ->withSuccess('Signed in');
         }
 
         error_log("Error ketika login");
-  
+
         return redirect("/login")->withSuccess('Login details are not valid');
     }
 
@@ -39,9 +41,9 @@ class UserController extends Controller
     {
         return view('user.auth.register');
     }
-      
+
     public function customRegistration(Request $request)
-    {  
+    {
         error_log("Validating registration");
         $data = $request->validate([
             'username' => 'required|unique:users,username',
@@ -52,32 +54,32 @@ class UserController extends Controller
         error_log("Successfully validating");
 
         error_log($data['username']);
-           
+
         $user = $this->create($data);
         $user->save();
-        error_log("Successfully created user ". $user->username);
+        error_log("Successfully created user " . $user->username);
 
         auth('user')->attempt($data);
-         
+
         return redirect("/home");
     }
 
     public function create(array $data)
     {
-      return User::create([
-        'username' => $data['username'],
-        'email' => $data['email'],
-        'password' => Hash::make($data['password'])
-      ]);
-    }    
-    
+        return User::create([
+            'username' => $data['username'],
+            'email' => $data['email'],
+            'password' => Hash::make($data['password'])
+        ]);
+    }
+
     public function home()
     {
-        if(auth('user')->check()){
+        if (auth('user')->check()) {
             $bukus = Books::all();
             return view('user.home', compact('bukus'));
         }
-  
+
         return redirect("/login")->withSuccess('You are not allowed to access');
     }
     public function read(string $id): View
@@ -86,10 +88,18 @@ class UserController extends Controller
         return view('user.detail-book', compact('book'));
     }
 
-    public function signOut() {
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+        $books = Books::where('name', 'like', '%' . $search . '%')->get();
+        return view('user.home', ['books' => $books]);
+    }
+
+    public function signOut()
+    {
         Session::flush();
         auth('user')->logout();
-  
+
         return Redirect('/login');
     }
 }

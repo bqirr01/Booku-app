@@ -53,6 +53,9 @@ Route::namespace("App\Http\Controllers")->group(function () {
 
     Route::get('/signout', 'UserController@signOut')->name('signout');
 
+    //user search book
+    Route::get('/home/search', 'UserController@search')->name('search');
+
     //admin auth
     Route::get('/admin/login', 'AdminController@login')->name('adminLogin')->middleware('guest:admin');
     Route::post('/admin/login', 'AdminController@customLogin')->name('adminLogin.post');
@@ -62,7 +65,6 @@ Route::namespace("App\Http\Controllers")->group(function () {
     Route::get('/admin/signout', 'AdminController@signOut')->name('adminSignout');
 
     Route::post('/admin/setting', 'AdminController@modifAdmin')->name('modifAdmin');
-
 
 
     //Create book

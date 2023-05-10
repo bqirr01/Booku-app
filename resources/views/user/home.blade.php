@@ -17,9 +17,9 @@
         <div class="flex items-center justify-center">
             <img src="/images/logo.png" alt="logo-booku">
         </div>
-        <form class="flex items-center justify-center">
-            <label for="simple-search" class="sr-only">Search</label>
-            <input type="text" id="simple-search"
+        <form method="get" action="{{ route('search') }}" class="flex items-center justify-center">
+            <label for="search" class="sr-only">Search</label>
+            <input type="text" id="search" name="search"
                 class="relative w-full shadow-sm bg-white text-[#25130B] text-sm rounded-full block pl-5 py-[14px]"
                 placeholder="Cari buku..." required>
             <button type="submit"
@@ -42,7 +42,7 @@
 
 <div class="flex flex-wrap gap-[100px] pt-12 max-sm:pt-0 justify-between px-[272px] max-lg:px-3 max-lg:justify-center">
     
-    @foreach ($bukus as $book)
+    @foreach ($books as $book)
             @include('user.components.book-card', [
                 'cover' => $book->cover,
                 'bookname' => $book->name,
