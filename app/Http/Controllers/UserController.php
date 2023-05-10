@@ -73,10 +73,20 @@ class UserController extends Controller
         ]);
     }
 
-    public function home()
+    public function home(Request $request)
     {
         if (auth('user')->check()) {
-            $bukus = Books::all();
+            $search = $request->query('search');
+
+            $book = Books::query();
+
+            if ($search) {
+                $book->where('name', 'like', "%$search%");
+            }
+
+            $bukus = $book->get();
+
+
             return view('user.home', compact('bukus'));
         }
 
@@ -86,13 +96,6 @@ class UserController extends Controller
     {
         $book = Books::findOrFail($id);
         return view('user.detail-book', compact('book'));
-    }
-
-    public function search(Request $request)
-    {
-        $search = $request->input('search');
-        $books = Books::where('name', 'like', '%' . $search . '%')->get();
-        return view('user.home', ['books' => $books]);
     }
 
     public function signOut()
