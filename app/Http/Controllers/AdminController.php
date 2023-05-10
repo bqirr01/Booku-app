@@ -80,11 +80,22 @@ class AdminController extends Controller
         ]);
     }
 
-    public function perpustakaan()
+    public function perpustakaan(Request $request)
     {
-        $books = Books::all();
+        
         if (auth('admin')->check()) {
-            return view('admin.perpustakaan', compact('books'));
+            $search = $request->query('search');
+
+            $book = Books::query();
+
+            if ($search) {
+                $book->where('name', 'like', "%$search%");
+            }
+
+            $bukus = $book->get();
+
+
+            return view('admin.perpustakaan', compact('bukus'));
         }
 
         return redirect("/admin/login")->withSuccess('You are not allowed to access');

@@ -63,9 +63,9 @@
     <div
         class="flex flex-row-reverse max-2xl:flex-col gap-[100px] max-2xl:gap-[15px] items-start pt-10 justify-between px-[272px] max-2xl:px-2 max-lg:justify-center">
 
-        <form class="flex items-center justify-center w-4/5">
-            <label for="simple-search" class="sr-only">Search</label>
-            <input type="text" id="simple-search"
+        <form method="get" class="flex items-center justify-center">
+            <label for="search" class="sr-only">Search</label>
+            <input type="text" id="search" name="search"
                 class="relative w-full shadow-sm bg-white text-[#25130B] text-sm rounded-full block pl-5 py-[14px]"
                 placeholder="Cari buku..." required>
             <button type="submit"
@@ -95,7 +95,7 @@
 
 
     <div class="flex flex-wrap gap-[100px] pt-12 justify-between px-[272px] max-lg:px-3 max-lg:justify-center">
-        @foreach ($books as $book)
+        @foreach ($bukus as $book)
             @include('admin.components.admin-book-card', [
                 'cover' => $book->cover,
                 'bookname' => $book->name,
